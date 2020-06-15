@@ -15,7 +15,6 @@ jobs:
       - name: Run Tests
         run: |
           npm ci
-          npm run test
       - name: Zip Files
         run: |
           cd scripts
