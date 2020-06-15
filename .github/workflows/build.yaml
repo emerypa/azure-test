@@ -1,0 +1,27 @@
+name: Build Binaries
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13"
+      - name: Run Tests
+        run: |
+          npm ci
+          npm run test
+      - name: Zip Files
+        run: |
+          cd scripts
+          ./buildFunctions.sh
+      - name: Upload Binaries
+        run: |
+          cd scripts
+          ./uploadFunctions.sh
+
