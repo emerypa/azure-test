@@ -3,14 +3,20 @@ variable subscription_id {}
 variable sql_admin_user {}
 variable sql_admin_pass {}
 
-variable rg_name {
-  default = "azure-app"
+variable location {
+  description = "Resource Group Location"
+  type        = string
+  default     = "eastus"
 }
 
-variable rg_location {
-  default = "East US"
+variable environment {
+  description = "dev/stage/prod"
+  type        = string
+  default     = "dev"
 }
 
-variable prefix {
-  default = "pat"
+variable name {
+  description = ""
+  type        = string
+  default     = "azure-app"
 }

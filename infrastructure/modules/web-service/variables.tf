@@ -1,6 +1,3 @@
-variable sql_admin_user {}
-variable sql_admin_pass {}
-
 variable resource_group {
   description = "Resource Group Name"
   type        = string

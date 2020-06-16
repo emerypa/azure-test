@@ -16,14 +16,32 @@ variable name {
   default     = "test-service"
 }
 
-variable type {
-  description = "Storage Account Type"
+variable connection_string {
+  description = "Storage Container Connection String"
   type        = string
-  default     = "test"
+  default     = ""
+}
+
+variable account_name {
+  description = "Storage Account Name"
+  type        = string
+  default     = ""
+}
+
+variable container_name {
+  description = "Storage Container Name"
+  type        = string
+  default     = ""
+}
+
+variable blob_name {
+  description = "Storage Blob Name"
+  type        = string
+  default     = ""
 }
 
 variable code_source {
   description = "Directory Location of Azure Functions Build Output"
   type        = string
-  default     = "./build/functionapp.zip"
+  default     = ""
 }
