@@ -29,8 +29,8 @@ module function_storage {
   resource_group = azurerm_resource_group.main.name
   location       = azurerm_resource_group.main.location
   name           = "${azurerm_resource_group.main.name}-function-storage"
-  type           = "function"
-  code_source    = "./build/functionapp.zip"
+  type           = "functions"
+  code_source    = "../build/functions.zip"
 }
 
 # Function Service
@@ -43,7 +43,7 @@ module function_service {
   account_name      = module.function_storage.account_name
   container_name    = module.function_storage.container_name
   blob_name         = module.function_storage.blob_name
-  code_source       = "./build/functionapp.zip"
+  code_source       = "../build/functions.zip"
 }
 
 # Database

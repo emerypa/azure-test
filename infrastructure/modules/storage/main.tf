@@ -21,7 +21,7 @@ resource azurerm_storage_container main {
 }
 
 resource azurerm_storage_blob main {
-  name                   = "${var.type}app.zip"
+  name                   = "${var.type}.zip"
   storage_account_name   = azurerm_storage_account.main.name
   storage_container_name = azurerm_storage_container.main.name
   type                   = "Block"
